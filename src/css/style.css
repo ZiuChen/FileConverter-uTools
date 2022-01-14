@@ -1,0 +1,25 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, sans-serif;
+}
+
+.mdui-table-cell-checkbox {
+  width: 60px;
+}
+
+.file-table .file-name {
+  max-width: 200px;
+  word-wrap: break-word;  
+  word-break: normal;
+}
+
+.file-table .file-type {
+  width: 100px;
+}
+
+.file-table .file-process {
+  width: 200px;
+}
+
+.file-table .file-operate {
+  width: 100px;
+}
