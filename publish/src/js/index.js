@@ -46,7 +46,7 @@ function init(files) {
       toastr.options = {
         positionClass: "toast-bottom-left",
       }
-      toastr.error(`${file.name} 大于10MB`, "FileConverter")
+      toastr.error(`${file.name} 大于20MB`, "FileConverter")
     }
     addNewFile(file)
   }
@@ -55,7 +55,7 @@ function init(files) {
 
 function checkOverSize(file) {
   console.log(file.size);
-  if(file.size >= 10485760) {
+  if(file.size >= 20971520) {
     console.log("oversize");
     return true
   } else {
@@ -65,9 +65,9 @@ function checkOverSize(file) {
 }
 
 function addNewFile(file) {
+  let fileID = new Date().getTime()
   let dom = /* html */`
-    <tr id="${new Date().getTime()}">
-      <input type="file" class="file-target" style="display: none;">
+    <tr id="${fileID}">
       <th class="file-name" title="${file.name}">${file.name}</th>
       <th class="file-type">${file.name.split(".").pop()}</th>
       <th class="file-process">Process</th>

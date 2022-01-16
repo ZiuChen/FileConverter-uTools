@@ -4,9 +4,9 @@
     "author": "Ziu",
     "main": "index.html",
     "preload": "preload.js",
-    "logo": "logo.jpg",
+    "logo": "logo.png",
     "platform": ["win32", "darwin", "linux"],
-    "version": "0.0.1",
+    "version": "1.0.0",
     "features": [
       {
         "code": "file-converter",
