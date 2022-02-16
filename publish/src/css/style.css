@@ -7,19 +7,40 @@ body {
 }
 
 .file-table .file-name {
-  max-width: 200px;
+  max-width: 150px;
   word-wrap: break-word;  
   word-break: normal;
 }
 
-.file-table .file-type {
-  width: 100px;
-}
-
-.file-table .file-process {
+.file-table .file-status {
   width: 200px;
 }
 
-.file-table .file-operate {
+.file-table .file-time, .file-type {
   width: 100px;
+}
+
+.mdui-list-item {
+  height: 4em;
+}
+
+.logo {
+  margin-left: 60px;
+  zoom: 18%;
+  border: solid 10px white;
+  border-radius: 450px;
+}
+
+.tab-icons {
+  zoom: 85%;
+  margin-right: 4px;
+}
+
+.config {
+  width: 45%;
+  text-align: right;
+}
+
+.config button {
+  width: 75px;
 }
