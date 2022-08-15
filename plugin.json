@@ -1,0 +1,26 @@
+{
+    "pluginName": "文件格式转换",
+    "description": "转换任何你想转换的文件",
+    "author": "Ziu",
+    "main": "index.html",
+    "preload": "preload.js",
+    "logo": "logo.png",
+    "platform": ["win32"],
+    "version": "1.0.0",
+    "features": [
+      {
+        "code": "file-converter",
+        "explain": "转换任何你想转换的文件",
+        "cmds": [
+          "文件格式转换",
+          "FileConverter",
+          {
+            "type": "files",
+            "fileType": "file",
+            "label": "文件格式转换"
+          }
+        ]
+      }
+    ]
+  }
+  

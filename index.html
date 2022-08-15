@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>文件格式转换</title>
+    <link rel="stylesheet" href="./src/css/toastr.min.css" />
+    <link rel="stylesheet" href="./src/css/mdui.min.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
+  </head>
+
+  <body class="mdui-theme-primary-indigo mdui-theme-accent-indigo mdui-text-color-indigo">
+    <div class="mdui-toolbar mdui-color-theme">
+      <img class="logo" src="./logo.png" alt="logo" />
+      <span class="mdui-typo-title">文件格式转换</span>
+      <div class="mdui-toolbar-spacer"></div>
+      <a href="javascript:;" class="mdui-btn mdui-btn-icon restore" title="restore settings">
+        <i class="mdui-icon material-icons">settings_backup_restore</i>
+      </a>
+    </div>
+    <div class="mdui-tab" mdui-tab>
+      <a href="#tab-transfer" class="mdui-ripple"
+        ><span><i class="mdui-icon material-icons tab-icons">autorenew</i>格式转换</span></a
+      >
+      <a href="#tab-setting" class="mdui-ripple"
+        ><span><i class="mdui-icon material-icons tab-icons">settings</i>设置</span></a
+      >
+      <a href="#tab-about" class="mdui-ripple"
+        ><span><i class="mdui-icon material-icons tab-icons">explore</i>关于</span></a
+      >
+    </div>
+
+    <div id="tab-transfer" class="pages convert-page">
+      <table class="file-table mdui-table mdui-table-hoverable">
+        <thead>
+          <tr>
+            <th class="file-name">File (20MB limit)</th>
+            <th class="file-type">Type</th>
+            <th class="file-time">Time</th>
+            <th class="file-status">Status</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <button
+        class="transfer-trigger mdui-fab mdui-fab-fixed mdui-color-theme-accent mdui-ripple"
+        style="display: none"
+      >
+        <i class="mdui-icon material-icons">file_upload</i>
+      </button>
+    </div>
+
+    <div id="tab-setting" class="pages config-page" style="display: none">
+      <ul class="mdui-list">
+        <ul class="mdui-list">
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">cloud</i>
+            <div class="mdui-list-item-content">切换接口</div>
+            <div class="config change" id="config-api">
+              <div class="mdui-textfield">
+                <label class="mdui-radio">
+                  <input type="radio" name="group1" checked />
+                  <i class="mdui-radio-icon"></i>
+                  AlltoAll
+                </label>
+
+                <label class="mdui-radio">
+                  <input type="radio" name="group1" disabled />
+                  <i class="mdui-radio-icon"></i>
+                  CloudConvert
+                </label>
+              </div>
+            </div>
+          </li>
+
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">insert_drive_file</i>
+            <div class="mdui-list-item-content">自定义输出文件名</div>
+            <div class="config change" id="config-filename">
+              <div class="mdui-textfield">
+                <input class="mdui-textfield-input" type="text" placeholder="支持格式化表达式" />
+              </div>
+            </div>
+          </li>
+
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">sim_card_alert</i>
+            <div class="mdui-list-item-content">静默模式</div>
+            <div class="config change" id="config-silence">
+              <label class="mdui-switch">
+                <input type="checkbox" />
+                <i class="mdui-switch-icon"></i>
+              </label>
+            </div>
+          </li>
+
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">folder</i>
+            <div class="mdui-list-item-content">文件默认输出路径</div>
+            <div class="config click" id="config-path">
+              <button class="mdui-btn mdui-color-theme-accent mdui-ripple">选择路径</button>
+            </div>
+          </li>
+
+          <!-- <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">move_to_inbox</i>
+            <div class="mdui-list-item-content">转换完成自动保存</div>
+            <div class="config click" id="config-autosave">
+              <label class="mdui-switch">
+                <input type="checkbox" checked/>
+                <i class="mdui-switch-icon"></i>
+              </label>
+            </div>
+          </li> -->
+
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">error</i>
+            <div class="mdui-list-item-content">重置设置</div>
+            <div class="config click" id="config-restore">
+              <button class="mdui-btn mdui-color-theme-accent mdui-ripple">重置</button>
+            </div>
+          </li>
+        </ul>
+      </ul>
+    </div>
+
+    <div id="tab-about" class="pages convert-page">
+      <div align="center" class="mdui-typo title">
+        <img src="./logo.png" alt="logo" />
+        <h3>文件格式转换</h3>
+        <h6><em>File Converter</em></h6>
+      </div>
+      <div align="center" class="mdui-typo content">
+        <h6>
+          使用中遇到任何问题或有任何建议，欢迎在插件评论页或
+          <em>Github</em> 留言。
+        </h6>
+        <h6>开发不易，欢迎五星好评</h6>
+      </div>
+    </div>
+
+    <script src="./src/js/jquery.min.js"></script>
+    <script src="./src/js/toastr.min.js"></script>
+    <script src="./src/js/mdui.min.js"></script>
+    <script src="./src/js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "fileconverter-utools",
+  "version": "1.0.2",
+  "description": "* 200+文件格式转换 * 支持多种调用方式如匹配文件、超级面板、复制粘贴 * 一键开始所有文件的转换",
+  "main": "preload.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "ZiuChen",
+  "license": "MIT",
+  "dependencies": {
+    "chinese-random-ip": "^0.0.5",
+    "progress-stream": "^2.0.0",
+    "superagent": "^8.0.0"
+  }
+}
